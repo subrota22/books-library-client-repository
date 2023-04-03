@@ -1,0 +1,47 @@
+/* GOOGLE FONT FAMILY */
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Nerko+One&family=Raleway:wght@300;400&family=Roboto:ital,wght@0,500;1,300&display=swap');
+/* taiLwind css  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.body{
+  color:white;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* card hover effect  */
+.card:hover{
+  box-shadow: 3px 0px 5px 0px #0D2D92;
+}
+.ourUserCard{
+  transform: scaleX(0.8) rotateY(360deg);
+}
+/* scrollbar  */
+body::-webkit-scrollbar{
+width: 14px;
+background-color:#0F0D92;
+}
+body::-webkit-scrollbar-thumb{
+  background-color:#260D46;
+  border-radius: 20px;
+  }
+/* website rwd  */
+
+@media (max-width:900px) {
+  .navLinkResponsive{display: block;  }
+  .Navphoto{display: block;}
+}
+
+@media (max-width:600px) {
+  .navLinkResponsive{display: none;  }
+  .Navphoto{display: none;}
+}

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "target": "es2015",
+
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true , 
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+
+  },
+  "include": [
+    "src/**/*"
+, "public/"  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/app/shared/**/*"
+  ]
+}
