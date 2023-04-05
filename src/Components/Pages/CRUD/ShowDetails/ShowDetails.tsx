@@ -1,11 +1,14 @@
+import  { useContext } from 'react';
 import { NavLink, useLoaderData } from 'react-router-dom';
 import PageLoader from 'Components/Shares/PageLoader/PageLoader';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet';
 import { Typewriter } from 'react-simple-typewriter';
+import { AuthProvider } from 'UserContext/UserContext';
 
 const ShowDetails = () => {
+  const { user } = useContext(AuthProvider) ; 
   const bookDataGet: any = useLoaderData();
   const [loadingPage, setLoadingPage] = useState<Boolean>(true);
   const [data, setData]: any = useState({});
@@ -48,9 +51,12 @@ const ShowDetails = () => {
               <h2 className="card-title"><span className="text-info">Author : </span>{data?.author ? data?.author : "author not found"}</h2>
               <h2 className="card-title"><span className="text-info">Price : </span>{data?.price ? data?.price : "price not found"}</h2>
               <p><span className="text-info">Description : </span>{data?.description ? data?.description : "book description not found"}</p>
-         <div className="float-right flex justify-end">
-         <NavLink to={`/payment/${data?._id}`}><button className='btn btn-info px-2 text-white w-52 flex justify-end my-2'> <p>Buy now </p>  <i className="fa-solid fa-cart-shopping text-lg"></i> </button></NavLink>
-         </div>
+     {
+      user.uid &&
+      <div className="float-right flex justify-end">
+      <NavLink to={`/payment/${data?._id}`}><button className='btn btn-info px-2 text-white w-52 flex justify-end my-2'> <p>Buy now </p>  <i className="fa-solid fa-cart-shopping text-lg"></i> </button></NavLink>
+      </div>
+     }
             </div>
           </div>
         )}
