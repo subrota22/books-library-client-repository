@@ -3,7 +3,7 @@ const authToken = (email) => {
 const currentUser = {
 email:email , 
 }
-fetch(`https://books-libarary.vercel.app/jwt` , {
+fetch(`https://books-library-nine.vercel.app/jwt` , {
 method:"POST" ,
 headers:{
 "Content-Type" : "application/json"

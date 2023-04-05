@@ -13,6 +13,7 @@ import AllBooks from "../Pages/CRUD/EditBooks/Pagination/AllBooks" ;
 import Profile from "../Pages/Profile/Profile" ;
 import AllUsers from "../Pages/AllUsers/AllUsers" ;
 import PrivateRouter from "../../PrivaterRouters/PrivateRouter";
+import Payment from "Components/Pages/Payment/Payment";
 export const routers = createBrowserRouter([
     {
         path:"/", errorElement:<h2 style={{textAlign:"center" , height:"100vh", fontSize:"56px", paddingTop:"120px" , color:"red"}}> You have an error : </h2>, children:[
@@ -36,10 +37,9 @@ export const routers = createBrowserRouter([
                     {
                         path:"/all-books", element:<AllBooks></AllBooks>
                     },
-             
                     {
                         path:"/edit/:id",
-                        loader: ({params}) => fetch(`https://books-libarary.vercel.app/bookData/${params.id}`)
+                        loader: ({params}) => fetch(`https://books-library-nine.vercel.app/bookData/${params.id}`)
                         .then(res => res.json())
                         .then(data => data ) 
                         , element:<PrivateRouter><EditBooks></EditBooks></PrivateRouter>
@@ -55,11 +55,16 @@ export const routers = createBrowserRouter([
                     },
                     {
                      path:"/details/:id" ,   element:<ShowDetails></ShowDetails> ,
-                     loader: ({params}) => fetch(`https://books-libarary.vercel.app/bookData/${params.id}`)
+                     loader: ({params}) => fetch(`https://books-library-nine.vercel.app/bookData/${params.id}`)
                      .then(res => res.json())
                      .then(data => data ) 
                     } , 
-
+                    {
+                     path:"/payment/:id", element:<Payment></Payment>,
+                     loader: ({params}) => fetch(`https://books-library-nine.vercel.app/bookData/${params.id}`)
+                     .then(res => res.json())
+                     .then(data => data ) 
+                    },
                     {
                         path:"*", element:<h2> Page not found !!</h2>
                     }

@@ -12,7 +12,7 @@ const AllUsers = () => {
     const [loadingPage, setLoadingPage] = useState<Boolean>(true);
     const [data, setData]: any = useState([]);
 
-    const uri = `https://books-libarary.vercel.app/users?page=${page}&size=${pageSize}`;
+    const uri = `https://books-library-nine.vercel.app/users?page=${page}&size=${pageSize}`;
     //
     useQuery({
         queryKey: [page, pageSize],

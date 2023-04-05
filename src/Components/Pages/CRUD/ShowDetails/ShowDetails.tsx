@@ -9,7 +9,7 @@ const ShowDetails = () => {
   const bookDataGet: any = useLoaderData();
   const [loadingPage, setLoadingPage] = useState<Boolean>(true);
   const [data, setData]: any = useState({});
-  const uri = `https://books-libarary.vercel.app/bookData/${bookDataGet._id}`;
+  const uri = `https://books-library-nine.vercel.app/bookData/${bookDataGet._id}`;
   useQuery({
     queryKey: [bookDataGet._id],
     queryFn: () => fetch(uri, { method: "GET" })
@@ -46,7 +46,11 @@ const ShowDetails = () => {
             <div className="card-body">
               <h2 className="card-title"> <span className="text-info">Book name : </span> {data?.bookName ? data?.bookName : "book name not found"}</h2>
               <h2 className="card-title"><span className="text-info">Author : </span>{data?.author ? data?.author : "author not found"}</h2>
+              <h2 className="card-title"><span className="text-info">Price : </span>{data?.price ? data?.price : "price not found"}</h2>
               <p><span className="text-info">Description : </span>{data?.description ? data?.description : "book description not found"}</p>
+         <div className="float-right flex justify-end">
+         <NavLink to={`/payment/${data?._id}`}><button className='btn btn-info px-2 text-white w-52 flex justify-end my-2'> <p>Buy now </p>  <i className="fa-solid fa-cart-shopping text-lg"></i> </button></NavLink>
+         </div>
             </div>
           </div>
         )}

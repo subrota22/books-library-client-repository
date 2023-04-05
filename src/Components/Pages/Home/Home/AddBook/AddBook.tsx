@@ -5,7 +5,7 @@ import { MdFileUpload } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
-import GetBooks from '../GetBooks/GetBooks';
+import GetBooks from '../../../GetBooks/GetBooks';
 
 const AddBook = () => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ const AddBook = () => {
   formData.append("image", profile);
 
   const { name }: any = profile;
-
+console.log("bookInfo", bookInfo);
   //save user information in the mongo atlas 
   const collectNewBook = (bookPicture: String) => {
     setLoading(true);
@@ -33,7 +33,7 @@ const AddBook = () => {
     }
 
 
-    fetch("https://books-libarary.vercel.app/grpahql", {
+    fetch("https://books-library-nine.vercel.app/grpahql", {
       method: "POST",
       headers: {
         'content-type': 'application/json',

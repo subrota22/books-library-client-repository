@@ -39,7 +39,7 @@ const EditBooks = () => {
             date: new Date()
         }
         //send post data 
-        const uri = `https://books-libarary.vercel.app/editBook?id=${bookDataGet._id}&email=${user?.email}`;
+        const uri = `https://books-library-nine.vercel.app/editBook?id=${bookDataGet._id}&email=${user?.email}`;
 
         fetch(`https://api.imgbb.com/1/upload?key=${image_bb_key}`, {
             method: "POST",
@@ -131,6 +131,14 @@ const EditBooks = () => {
                                 <input type="text" className="input input-info" name="publisher"
                                     onChange={handleInputFeild} defaultValue={`${bookDataGet?.publisher}`}
                                     placeholder="Please enter publisher name" />
+                            </div>
+                            <br />
+                            <br />
+                            <div className="form-control">
+                                <label className="label" htmlFor="Price">Price:</label>
+                                <input type="number" className="input input-info" name="price"
+                                    onChange={handleInputFeild} defaultValue={`${bookDataGet?.price}`}
+                                    placeholder="Please enter book price" />
                             </div>
                             <br />
                             <div className="form-control">

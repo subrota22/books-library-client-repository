@@ -13,7 +13,7 @@ const BooksInfo = () => {
     const [loadingPage, setLoadingPage] = useState<Boolean>(true);
     const [data, setData]: any = useState([]);
 
-    const uri = `https://books-libarary.vercel.app/getBooks?page=${page}&size=${pageSize}`;
+    const uri = `https://books-library-nine.vercel.app/getBooks?page=${page}&size=${pageSize}`;
     //
     useQuery({
         queryKey: [page, pageSize],
@@ -68,6 +68,7 @@ const BooksInfo = () => {
                                             <div className="card-body">
                                                 <h2 className="card-title"> <span className="text-info">Book name : </span> {book?.bookName ? book?.bookName : "book name not found"}</h2>
                                                 <h2 className="card-title"><span className="text-info">Author : </span>{book?.author ? book?.author : "author not found"}</h2>
+                                                <h2 className="card-title"><span className="text-info">Price : </span>${book?.price ? book?.price : "price not found"}</h2>
                                                 <p><span className="text-info">Description : </span>{book?.description ? book?.description?.length > 32 ?
                                                     book?.description?.slice(0, 32) + "...." : book?.description : "book description not found"}</p>
                                                 <div className="card-actions justify-end">
@@ -91,6 +92,7 @@ const BooksInfo = () => {
                                             <div className="card-body">
                                                 <h2 className="card-title"> <span className="text-info">Book name : </span> {book?.bookName ? book?.bookName : "book name not found"}</h2>
                                                 <h2 className="card-title"><span className="text-info">Author : </span>{book?.author ? book?.author : "author not found"}</h2>
+                                                <h2 className="card-title"><span className="text-info">Price : </span>${book?.price ? book?.price : "price not found"}</h2>
                                                 <p><span className="text-info">Description : </span>{book?.description ? book?.description?.length > 32 ?
                                                     book?.description?.slice(0, 32) + "...." : book?.description : "book description not found"}</p>
                                                 <div className="card-actions justify-end">

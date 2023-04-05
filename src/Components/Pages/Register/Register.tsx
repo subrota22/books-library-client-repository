@@ -44,7 +44,7 @@ const Register = () => {
     const createMongoDBUser = (userData: any) => {
         setLoading(true);
 
-        fetch("https://books-libarary.vercel.app/users", {
+        fetch("https://books-library-nine.vercel.app/users", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <>
         <Helmet> <title>Home page</title> </Helmet>
-       <BasicCard></BasicCard>
+         <BasicCard></BasicCard>
         </>
     );
 };

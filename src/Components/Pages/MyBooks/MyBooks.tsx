@@ -20,7 +20,7 @@ const MyBooks = () => {
     const [loadingPage, setLoadingPage] = useState<Boolean>(true);
     const [data, setData]: any = useState([]);
     const { user } = useContext(AuthProvider);
-    const uri = `https://books-libarary.vercel.app/myBooks?page=${page}&size=${pageSize}&email=${user?.email}`;
+    const uri = `https://books-library-nine.vercel.app/myBooks?page=${page}&size=${pageSize}&email=${user?.email}`;
     //
     const { refetch } = useQuery({
         queryKey: [page, pageSize, user?.email],
@@ -40,7 +40,7 @@ const MyBooks = () => {
     }
 
     const handleDelete: any = (id: any) => {
-        fetch(`https://books-libarary.vercel.app/deleteBooks?id=${id}&email=${user?.email}`, {
+        fetch(`https://books-library-nine.vercel.app/deleteBooks?id=${id}&email=${user?.email}`, {
             method: "DELETE",
             headers: {
                 authentication: `Bearer ${localStorage.getItem("book-store")} `
@@ -140,6 +140,7 @@ const MyBooks = () => {
                                         <div className="card-body">
                                             <h2 className="card-title"> <span className="text-info">Book name : </span> {book?.bookName ? book?.bookName : "book name not found"}</h2>
                                             <h2 className="card-title"><span className="text-info">Author : </span>{book?.author ? book?.bookName : "author not found"}</h2>
+                                            <h2 className="card-title"><span className="text-info">Price : </span> ${book?.price ? book?.price : "price not found"}</h2>                           
                                             <p><span className="text-info">Description : </span>{book?.description ? book?.description?.length > 32 ?
                                                 book?.description?.slice(0, 32) + "...." : book?.description : "book description not found"}</p>
                                             <div className="card-actions justify-end">
@@ -163,7 +164,9 @@ const MyBooks = () => {
                                         <div className="card-body">
                                             <h2 className="card-title"> <span className="text-info">Book name : </span> {book?.bookName ? book?.bookName : "book name not found"}</h2>
                                             <h2 className="card-title"><span className="text-info">Author : </span>{book?.author ? book?.bookName : "author not found"}</h2>
-                                            <p><span className="text-info">Description : </span>{book?.description ? book?.description?.length > 32 ?
+                                            <h2 className="card-title"><span className="text-info">Price : </span>{book?.price ? book?.price : "price not found"}</h2>
+                                            
+                                             <p><span className="text-info">Description : </span>{book?.description ? book?.description?.length > 32 ?
                                                 book?.description?.slice(0, 32) + "...." : book?.description : "book description not found"}</p>
                                             <div className="card-actions justify-end">
                                                 <Link to={`/edit/${book?._id}`} className="btn btn-primary"> Edit book <i className="fa-solid fa-arrow-right text-white  ml-3"></i> </Link>

@@ -39,8 +39,9 @@ const AddBooks = () => {
             ...book,
             date: new Date()
         }
+        console.log(book);
         //send post data 
-        const uri = `https://books-libarary.vercel.app/addBook`;
+        const uri = `https://books-library-nine.vercel.app/addBook`;
         if(!name){
             toast.info("Please provide your book image") ;
             setLoading(false) ;
@@ -132,6 +133,13 @@ const AddBooks = () => {
                                 <input type="text" className="input input-info" name="publisher"
                                     onChange={handleInputFeild}
                                     placeholder="Please enter publisher name" required />
+                            </div>
+                            <br />
+                            <div className="form-control">
+                                <label className="label" htmlFor="Price">Price :</label>
+                                <input type="number" className="input input-info" name="price"
+                                    onChange={handleInputFeild}
+                                    placeholder="Please enter your book price" required />
                             </div>
                             <br />
                             <div className="form-control">
