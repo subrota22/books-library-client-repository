@@ -49,7 +49,7 @@ const ShowDetails = () => {
             <div className="card-body">
               <h2 className="card-title"> <span className="text-info">Book name : </span> {data?.bookName ? data?.bookName : "book name not found"}</h2>
               <h2 className="card-title"><span className="text-info">Author : </span>{data?.author ? data?.author : "author not found"}</h2>
-              <h2 className="card-title"><span className="text-info">Price : </span>{data?.price ? data?.price : "price not found"}</h2>
+              <h2 className="card-title"><span className="text-info">Price : </span>${data?.price ? data?.price : "price not found"}</h2>
               <p><span className="text-info">Description : </span>{data?.description ? data?.description : "book description not found"}</p>
      {
       user.uid &&
@@ -60,7 +60,6 @@ const ShowDetails = () => {
             </div>
           </div>
         )}
-
 
         <div className='text-center'>
           <NavLink to="/" className="btn btn-primary mx-auto mb-6" style={{ width: "60%" }}>Go back</NavLink>
